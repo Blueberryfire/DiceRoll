@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<! -- 
+By:
+Jonah Reisner
+Even days period 7+8
+
+In this program, everytime the button is pressed two new values are created 
+and applied to the paragraph elements and the screen gets updated
+to reflect this
+-->
+
+<script>
+    function genNum(){
+        randNum = Math.floor(Math.random() * 6) + 1;
+    }
+    function applyDiceNumbers(){
+        genNum();
+        diceTotal=randNum;
+        document.getElementById("dieOne").innerHTML = "Die One Value: " + randNum;
+        genNum();
+        diceTotal+=randNum;
+        document.getElementById("dieTwo").innerHTML = "Die Two Value: " + randNum;
+        document.getElementById("diceTotal").innerHTML = "Total Dice Value: " + diceTotal;
+    }
+</script>
+<body onload="applyDiceNumbers();">
+    <p id="dieOne">Die One Value: </p>
+    <p id="dieTwo">Die Two Value: </p>
+    <p id="diceTotal">Total Dice Value: </p>
+    <button onclick="applyDiceNumbers();"> Roll dice!</button>
+</body>
+</html>
